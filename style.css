@@ -1,0 +1,133 @@
+/* css responsive navbar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar {
+  background-color: rgb(2, 2, 113);
+  color: white;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-bars {
+  width: 32px;
+  height: 32px;
+  display: none;
+}
+.logo-name {
+  font-weight: bold;
+  font-size: 2.3rem;
+}
+.menu-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.menu-links a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: yellow;
+  position: relative;
+}
+/* underlined link hover */
+.menu-links a::after {
+  content: "";
+  height: 3px;
+  width: 0%;
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  border-radius: 10px;
+  transition: 0.4s ease;
+}
+.menu-links a:hover::after {
+  transform: translateX(-50%);
+  width: 100%;
+}
+/* buttons */
+.btn {
+  cursor: pointer;
+  border: none;
+  background-color: rgb(181, 144, 12);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 2px 15px;
+  border-radius: 8px;
+}
+.btn:hover {
+  background-color: white;
+  color: rgb(181, 144, 12);
+}
+/* media querry for normal phones*/
+@media screen and (max-width: 750px) {
+  .fa-bars {
+    display: block;
+    color: white;
+  }
+  .menu-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 50px;
+    position: absolute;
+    right: 0;
+    padding: 60px 40px 50px 40px;
+    max-width: 50vw;
+    width: 100%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: linear-gradient(to top,rgb(8, 102, 205) 95%,transparent 95%);
+    display: none;
+  }
+  .menu-nav:hover .menu-links {
+    display: block;
+  }
+  .menu-links a {
+    color: white;
+    font-size: 1.7rem;
+    display: block;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  .btn {
+    margin-top: 20px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 2px 20px;
+    border-radius: 8px;
+  }
+}
+/* media querry for small phones */
+@media screen and (max-width: 400px) {
+  .menu-links {
+    background: linear-gradient(
+      to top,
+      rgb(8, 102, 205) 94.2%,
+      transparent 94.2%
+    );
+  }
+
+  .menu-links a {
+    color: white;
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+  .btn {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding: 2px 20px;
+    border-radius: 8px;
+  }
+}
